@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="error.css" rel="stylesheet" />
+    <title>Error</title>
+    <% const PAGE_NOT_FOUND = 404 ;%> <% const INTERNAL_SERVER_ERROR = 500 ;%>
+  </head>
+  <body class="error-page">
+    <div class="error-container">
+      <% if (error === PAGE_NOT_FOUND) {%>
+      <h1 class="error-head"><%= error %></h1>
+      <p class="error-message">
+        <strong class="error-subhead"> This is Awkward</strong>
+        <br />
+        Truth is The Page, This Page Doesn't Exist <br />Try returning
+        <a href="/">Home</a> or Get some default
+        <a href="/search">Listings</a>
+      </p>
+      <% } else { %>
+      <h1 class="error-head"><%= error = INTERNAL_SERVER_ERROR %></h1>
+      <p class="error-message">
+        <strong class="error-subhead">This is Awkward</strong>
+        <br />
+        Something went horribly wrong maybe the internet is not working.
+        <br />or<br />
+        The world is burning and we are going to die
+        <br />or<br />
+        <small>maybe I didn't implement it yet.</small>
+      </p>
+      <% } %>
+    </div>
+  </body>
+</html>

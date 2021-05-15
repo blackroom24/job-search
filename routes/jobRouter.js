@@ -10,8 +10,9 @@ jobRouter.get('/', async (req, res) => {
   try {
     const { data } = await axios.get(`${BASE_URL}?description=React`);
     res.render('index', { jobs: data });
-  } catch (error) {
-    res.render('errorPage', { error: error.response.status });
+  } catch (err) {
+    let errorStatus = err.response.status;
+    res.render('error', { error: errorStatus });
   }
 });
 
@@ -29,8 +30,9 @@ jobRouter.get('/search', async (req, res) => {
         `${BASE_URL}?description=${description}&location=${location}`,
       );
       res.render('index', { jobs: data });
-    } catch (error) {
-      res.render('errorPage', { error: error.response.status });
+    } catch (err) {
+      let errorStatus = err.response.status;
+      res.render('error', { error: errorStatus });
     }
   }
 });
