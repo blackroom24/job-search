@@ -125,27 +125,6 @@ form.main::after {
   font-size: 12px;
   padding: 15px;
 }
-/* Company Container */
-.company-container {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: hsla(0, 0, 0, 0.2) 0 4px 2px -2px;
-  font-family: 'adelle-sans', sans-serif;
-  font-weight: 100;
-  margin: 50px auto;
-  width: 28rem;
-}
-.company-culture {
-  margin: 0 auto;
-  width: 80%;
-}
-.company-culture-head h2 {
-  color: #333;
-  font-weight: 100;
-}
-.company-culture-subtext p {
-  color: #333;
-}
 /* About Us Page*/
 *,
 *:before,

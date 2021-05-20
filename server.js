@@ -1,6 +1,4 @@
 const express = require('express');
-const jobRouter = require('./routes/jobRouter');
-const searchRouter = require('./routes/searchRouter');
 const errorRouter = require('./routes/errorRouter');
 const aboutRouter = require('./routes/aboutRouter');
 const { PORT, PAGE_NOT_FOUND } = require('./config');
@@ -12,8 +10,9 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static('public'));
 
-app.get('/', jobRouter);
-app.get('/search', searchRouter);
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});
 app.get('/about', aboutRouter);
 app.get(
   '/:slug',
