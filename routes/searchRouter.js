@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const { BASE_URL } = require('../config');
+const { GITHUB_JOB_URL } = require('../config');
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get('/search', async (req, res) => {
   } else {
     try {
       const { data } = await axios.get(
-        `${BASE_URL}?description=${description}&location=${location}`,
+        `${GITHUB_JOB_URL}?description=${description}&location=${location}`,
       );
       res.render('index.ejs', { jobs: data });
     } catch (err) {

@@ -1,9 +1,9 @@
 const express = require('express');
 
-const aboutRouter = express.Router();
+const router = express.Router();
 
-aboutRouter.get('/about', (req, res) => {
-  res.render('about');
+router.get('/about', (req, res) => {
+  res.render('about.ejs');
 });
 
-module.exports = aboutRouter;
+module.exports = router;

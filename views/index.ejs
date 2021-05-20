@@ -3,68 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Job Search</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="job.css" />
     <link rel="stylesheet" href="/w3css/3/w3.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
     />
+    <title>Job Search</title>
   </head>
+
   <body>
     <!--This is a navigation bar-->
-    <div class="header">
-      <a href="/" class="logo">Job Search</a>
-      <div class="header-right">
+    <nav>
+      <a href="/" class="nav-home">Job Search</a>
+      <div class="nav-right">
         <a href="/about">About</a>
       </div>
-    </div>
+    </nav>
+
     <div class="clear"></div>
+
     <!---This is for search box---->
     <div class="bg-image"></div>
     <div class="bg-text">
       <div class="search-container">
-        <form method="GET" action="/search">
-          <input type="text" name="description" placeholder="description" />
-          <input type="text" name="location" placeholder="location" />
+        <form class="main" method="GET" action="/search">
+          <input type="text" name="description" placeholder="Job description" />
+          <input type="text" name="location" placeholder="Location" />
           <button class="search-button" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </form>
       </div>
     </div>
+
     <div class="clear"></div>
-    <div class="jobs-container">
-      <div class="jobs-grid">
-        <% jobs.forEach(job=> { %>
-        <div class="job">
-          <img src="<%= job.company_logo %>" />
-          <div class="info">
-            <object>
-              <a href="<%= job.company_url %>"> <%= job.company %> </a>
-            </object>
-            <h2><%= job.title %></h2>
-            <span> <%= job.location %> </span>
-          </div>
-          <div class="modal">
-            <div class="content-modal">
-              <img src="<%= job.company_logo %>" />
-              <h2><%= job.title %></h2>
-              <span> <%= job.location %> </span>
-              <p><%- job.description %></p>
-              <p><%- job.how_to_apply %></p>
-            </div>
-          </div>
+    <!-- Additional Things-->
+
+    <div class="company-container">
+      <div class="company-culture">
+        <div class="company-culuture-head">
+          <h2>Make your Move</h2>
         </div>
-        <% }); %>
+        <div class="company-culuture-subtext">
+          <p>
+            Search for jobs at companies whose people, perks and values align
+            with your professional needs
+          </p>
+        </div>
       </div>
     </div>
 
+    <div class="company-container">
+      <div class="company-culture">
+        <div class="company-culuture-head">
+          <h2>Find Your Work Fam</h2>
+        </div>
+        <div class="company-culuture-subtext">
+          <p>
+            Learn what makes a company unique from the perspective of the people
+            who work there — in their own words.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-container">
+      <div class="company-culture">
+        <div class="company-culuture-head">
+          <h2>Spotlight on Values</h2>
+        </div>
+        <div class="company-culuture-subtext">
+          <p>
+            Chart a career with meaning — find companies whose mission, vision,
+            and values align with yours.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="company-container">
+      <div class="company-culture">
+        <div class="company-culuture-head">
+          <h2>Benefits & Beyond</h2>
+        </div>
+        <div class="company-culuture-subtext">
+          <p>
+            Find a workplace that fits your lifestyle with up-to-date
+            information about what a company has to offer
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <div class="footer">
-      <p>Built by A3</p>
+      <p>Built under the guidance of Shilpa Ghode</p>
     </div>
-    <script src="app.js"></script>
   </body>
 </html>
