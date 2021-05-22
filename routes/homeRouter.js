@@ -1,12 +1,13 @@
 const express = require('express');
 const axios = require('axios');
+
 const { GITHUB_JOB_URL } = require('../config');
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
   try {
-    const { data } = await axios.get(`${GITHUB_JOB_URL}?description=React`);
+    const { data } = await axios.get(`${GITHUB_JOB_URL}?location=remote`);
     res.render('index.ejs', { jobs: data });
   } catch (err) {
     let errorStatus = err.response.status;

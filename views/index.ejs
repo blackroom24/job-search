@@ -1,42 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="/w3css/3/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
-    />
     <title>Job Search</title>
   </head>
 
   <body>
-    <!--This is a navigation bar-->
     <nav>
-      <a href="/" class="nav-home">Job Search</a>
+      <a class="nav-home" href="/">
+        Jobs Search
+      </a>
       <div class="nav-right">
         <a href="/about">About</a>
       </div>
     </nav>
 
-    <div class="clear"></div>
+    <div class="container">
+      <form method="GET" action="/search">
+        <div class="search">
+          <div class="form-group">
+            <label>What ?</label>
+            <input
+              type="text"
+              name="description"
+              placeholder="Job Description"
+            />
+          </div>
+          <div class="form-group">
+            <label>Where ?</label>
+            <input type="text" name="location" placeholder="Location" />
+          </div>
+          <div class="btn-submit">
+            <button type="submit">Search</button>
+          </div>
+        </div>
+      </form>
 
-    <!---This is for search box---->
-    <div class="bg-image"></div>
-    <div class="bg-text">
-      <div class="search-container">
-        <form class="main" method="GET" action="/search">
-          <input type="text" name="description" placeholder="Job description" />
-          <input type="text" name="location" placeholder="Location" />
-          <button class="search-button" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
+      <div class="jobs-grid">
+        <% jobs.forEach(job=> { %>
+        <div class="job">
+          <img src="<%= job.company_logo %>" />
+          <div class="info">
+            <object>
+              <a href="<%= job.company_url %>"> <%= job.company %> </a>
+            </object>
+            <h2><%= job.title %></h2>
+            <span> <%= job.location %> </span>
+          </div>
+          <div class="modal">
+            <div class="content-modal">
+              <img src="<%= job.company_logo %>" />
+              <h2><%= job.title %></h2>
+              <span> <%= job.location %> </span>
+              <p><%- job.description %></p>
+              <br/>
+              <h3>How to apply</h3>
+              <br/>
+              <p><%- job.how_to_apply %></b></p>
+            </div>
+          </div>
+        </div>
+        <% }); %>
       </div>
     </div>
-
-    <div class="clear"></div>
+    <script src="app.js"></script>
   </body>
 </html>
