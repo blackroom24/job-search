@@ -13,11 +13,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static('public'));
+app.use('/', express.static('public/img'));
+app.use('/', express.static('public/css'));
 
 app.get('/', homeRouter);
-app.get('/test', (req, res) => {
-  res.render('index_test_1.ejs');
-});
 app.get('/search', searchRouter);
 app.get('/about', aboutRouter);
 app.get(

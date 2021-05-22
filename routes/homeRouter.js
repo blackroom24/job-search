@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const { data } = await axios.get(`${GITHUB_JOB_URL}?location=remote`);
-    res.render('index.ejs', { jobs: data });
+    res.render('index.ejs', { jobs: data, title: 'Featured Jobs' });
   } catch (err) {
     let errorStatus = err.response.status;
     res.render('error.ejs', { error: errorStatus });
