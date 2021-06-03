@@ -9,9 +9,7 @@
 
   <body>
     <nav>
-      <a class="nav-home" href="/">
-        Jobs Search
-      </a>
+      <a class="nav-home" href="/"> Jobs Search </a>
       <div class="nav-right">
         <a href="/about">About</a>
       </div>
@@ -37,34 +35,28 @@
           </div>
         </div>
       </form>
-      <h1><%=title%></h1>
+      <h1 class="main-title"><%=title%></h1>
+
       <div class="jobs-grid">
-        <% jobs.forEach(job=> { %>
+        <% jobs.forEach(job => { %>
         <div class="job">
-          <img src="<%= job.company_logo %>" />
-          <div class="info">
-            <object>
-              <a href="<%= job.company_url %>"> <%= job.company %> </a>
-            </object>
-            <h2><%= job.title %></h2>
-            <span> <%= job.location %> </span>
-          </div>
-          <div class="modal">
-            <div class="content-modal">
-              <img src="<%= job.company_logo %>" />
-              <h2><%= job.title %></h2>
-              <span> <%= job.location %> </span>
-              <p><%- job.description %></p>
-              <br/>
-              <h3>How to apply</h3>
-              <br/>
-              <p><%- job.how_to_apply %></b></p>
-            </div>
+          <div class="job-info">
+            <h2 class="job-title"><%- job.title%></h2>
+            <h3 class="location-name"><%= job.location.display_name%></h3>
+            <% if (job.salary_max != null) {%>
+            <h4 class="salary-info">
+              Salary between <%=currency %> <%=job.salary_min %> - <%=
+              job.salary_max %>
+            </h4>
+            <%} else {%>
+            <h4 class="salary-info">Salary Confidential</h4>
+            <%}%>
+            <p class="job-description"><%- job.description%></p>
+            <a class="view-job" href="<%= job.redirect_url%>">View Job</a>
           </div>
         </div>
-        <% }); %>
+        <% }) %>
       </div>
     </div>
-    <script src="app.js"></script>
   </body>
 </html>

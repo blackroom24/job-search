@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   try {
     const { data } = await axios.get(URL);
     const { results } = data;
-    res.render('test.ejs', {
+    res.render('index.ejs', {
       jobs: results,
       currency: CURRENCY,
       title: 'Featured',

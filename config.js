@@ -1,7 +1,4 @@
-const GITHUB_JOB_URL = 'https://jobs.github.com/positions.json';
-
 module.exports = {
-  GITHUB_JOB_URL,
   APP_ID: '96a815b6',
   APP_KEY: 'c78ec5a97c5a114fd9d48edd3894c78c',
   PORT: 3000,
