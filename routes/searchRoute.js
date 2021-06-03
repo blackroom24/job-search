@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+
 const {
   BASE_URL,
   BASE_PARAMS,
@@ -8,6 +9,7 @@ const {
   COUNTRY,
   RESULTS,
 } = require('../config');
+
 const router = express.Router();
 
 router.get('/search', async (req, res) => {

@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const router = express.Router();
+
 const {
   BASE_PARAMS,
   BASE_URL,
@@ -10,6 +10,8 @@ const {
   CURRENCY,
   COUNTRY,
 } = require('../config');
+
+const router = express.Router();
 
 let location = 'mumbai';
 let description = 'python';
