@@ -7,12 +7,13 @@
 body {
   font-family: 'Lato', sans-serif;
   background: #444346;
+  background-image: url('business.jpg');
 }
-h1 {
+.main-title {
   text-align: center;
   font-weight: bold;
   font-size: 50px;
-  color: white;
+  color: #1c1b22;
   margin: 2rem;
 }
 nav {
@@ -37,7 +38,7 @@ nav a.nav-home {
 }
 
 nav a:hover {
-  background-color: #59ffec;
+  background-color: #fb9465;
   color: black;
 }
 .nav-right {
@@ -65,7 +66,7 @@ nav a:hover {
 }
 
 label {
-  color: beige;
+  color: #3f3f3f;
   font-size: 20px;
   margin-bottom: 7px;
 }
@@ -95,7 +96,8 @@ button {
   font-family: 'Lato', sans-serif;
   width: 100%;
   padding: 12px 20px;
-  background: #1c1b22;
+  background: #04aa6d;
+  border-radius: 8px;
   color: white;
   font-size: 16px;
   border: none;
@@ -105,7 +107,7 @@ button {
 }
 
 button:hover {
-  background-color: #59ffec;
+  background-color: #fb9465;
   color: #1c1b22;
 }
 
@@ -131,23 +133,22 @@ button:hover {
   border: none;
   border-radius: 8px;
   color: white;
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  width: auto;
+  white-space: nowrap;
+  vertical-align: middle;
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
-}
-.job-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
 }
 
 .job-title {
   font-size: 24px;
   margin: 0 0 2px 0;
+  color: #3f51b5;
   line-height: 30px;
 }
 .salary-info {
@@ -155,9 +156,11 @@ button:hover {
 }
 .location-name {
   margin: 3px 0 3px 0;
+  color: #4d5156;
 }
 .job-description {
   margin: 5px 0 5px 0;
+  color: #616161;
 }
 
 @media screen and (max-width: 1024px) {
