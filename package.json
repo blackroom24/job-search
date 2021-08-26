@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/6SA3MP/github-jobs-clone.git"
+    "url": "git+https://github.com/blackroom24/job-search.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/6SA3MP/github-jobs-clone/issues"
+    "url": "https://github.com/blackroom24/job-search/issues"
   },
-  "homepage": "https://github.com/6SA3MP/github-jobs-clone#readme",
+  "homepage": "https://github.com/blackroom24/job-search#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "ejs": "^3.1.6",
