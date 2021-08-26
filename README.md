@@ -14,10 +14,6 @@ Copy Paste the code on to your Workspace to clone the repo
 ```
 git clone https://github.com/blackroom24/github-jobs-clone.git
 ```
-For Tejas,Kalyani,Punit
-```
-git clone -b ui https://github.com/blackroom24/github-jobs-clone.git
-```
 ### 3) Getting Started
 After Downloading Node.js in your system
 run the following command to get all the required dependencies on your local machine.
