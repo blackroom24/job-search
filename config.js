@@ -1,6 +1,6 @@
 module.exports = {
-  APP_ID: '96a815b6',
-  APP_KEY: 'c78ec5a97c5a114fd9d48edd3894c78c',
+  APP_ID: process.env.APP_ID,
+  APP_KEY: process.env.APP_KEY,
   PORT: 3000,
   PAGE_NOT_FOUND: 404,
   COUNTRY: 'in',
