@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Job Search</title>
+  </head>
+
+  <body>
+    <nav>
+      <a class="nav-home" href="/"> Jobs Search </a>
+      <div class="nav-right">
+        <a href="/about">About</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <form method="GET" action="/search">
+        <div class="search">
+          <div class="form-group">
+            <label>What ?</label>
+            <input
+              type="text"
+              name="description"
+              placeholder="Job Description"
+            />
+          </div>
+          <div class="form-group">
+            <label>Where ?</label>
+            <input type="text" name="location" placeholder="Location" />
+          </div>
+          <div class="btn-submit">
+            <button type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+      <h1 class="main-title"><%=title%></h1>
+
+      <div class="jobs-grid">
+        <% jobs.forEach(job => { %>
+        <div class="job">
+          <div class="job-info">
+            <h2 class="job-title"><%- job.title%></h2>
+            <h3 class="location-name"><%= job.location.display_name%></h3>
+            <% if (job.salary_max != null) {%>
+            <h4 class="salary-info">
+              Salary between <%=currency %> <%=job.salary_min %> - <%=
+              job.salary_max %>
+            </h4>
+            <%} else {%>
+            <h4 class="salary-info">Salary Confidential</h4>
+            <%}%>
+            <p class="job-description"><%- job.description%></p>
+            <a class="view-job" href="<%= job.redirect_url%>">View Job</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

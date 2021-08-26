@@ -1,30 +1,52 @@
 {
-  "name": "github-jobs-clone",
+  "name": "job-search",
   "version": "1.0.0",
-  "description": "Implementation of Github jobs",
+  "description": "Implementation of Basic Job search",
   "main": "server.js",
-  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon testAPI.js",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/6SA3MP/github-jobs-clone.git"
+    "url": "git+https://github.com/blackroom24/job-search.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/6SA3MP/github-jobs-clone/issues"
+    "url": "https://github.com/blackroom24/job-search/issues"
   },
-  "homepage": "https://github.com/6SA3MP/github-jobs-clone#readme",
+  "homepage": "https://github.com/blackroom24/job-search#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.7"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/warnings",
+      "plugin:import/errors"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12
+    },
+    "rules": {
+      "no-console": "off"
+    },
+    "root": true
   }
 }
